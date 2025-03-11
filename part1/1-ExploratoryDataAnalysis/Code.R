@@ -56,9 +56,11 @@ plot_dir = paste0(main_dir, "cloud/project/plots")
 #### Slide 14: Load the dataset for EDA  ####
 
 # Read CSV file called "healthcare-dataset-stroke-data.csv"
-health_data = read.csv(file = file.path(data_dir,"healthcare-dataset-stroke-data.csv"), #<- provide file path
-               header = TRUE,            #<- if file has header set to TRUE
-               stringsAsFactors = FALSE) #<- read strings as characters, not as factors
+health_data = read.csv(
+  file = file.path(data_dir,
+                   "healthcare-dataset-stroke-data.csv"), #<- provide file path
+                   header = TRUE, #<- if file has header set to TRUE
+                   stringsAsFactors = FALSE) #<- read strings as characters, not as factors
 
 
 #=================================================-
