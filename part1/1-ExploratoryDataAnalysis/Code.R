@@ -13,22 +13,43 @@
 #=================================================-
 #### Slide 11: Directory settings  ####
 
-install.packages(box)
+# install.packages(box)
 # Set `main_dir` to the location of your materials folder.
 
-path = box::file()
-main_dir = dirname(dirname(path))
+# path = box::file()
+# main_dir = dirname(dirname(path))
 
 
 #=================================================-
 #### Slide 12: Directory settings (cont'd)  ####
 
+# Use base::file to handle file connections if needed
+# Gets the current working directory (use base::)
+path <- base::normalizePath(".")
+
+# Get the main directory (parent directory)
+main_dir <- dirname(dirname(path))
+
+# Create the "plots" directory if it doesn't exist
+if (!dir.exists(file.path(main_dir, 
+                          "cloud/project/plots"))) {
+  dir.create(file.path(main_dir, 
+                       "cloud/project/plots"))
+}
+
+# Construct the path to the directories
+data_dir <- paste0(main_dir, "cloud/project/data")
+plot_dir = paste0(main_dir, "cloud/project/plots")
+
+
 # Make `data_dir` from the `main_dir` and
 # remainder of the path to data directory.
-data_dir = paste0(main_dir, "/data")
+# data_dir = paste0(main_dir, "/data")
+
+
 # Make `plots_dir` from the `main_dir` and
 # remainder of the path to plots directory.
-plot_dir = paste0(main_dir, "/plots")
+# plot_dir = paste0(main_dir, "/plots")
 
 
 #=================================================-
